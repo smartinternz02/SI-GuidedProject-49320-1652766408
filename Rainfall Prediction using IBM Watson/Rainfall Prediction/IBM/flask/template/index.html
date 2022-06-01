@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  html {    
+    background: url('https://allthatsinteresting.com/wordpress/wp-content/uploads/2015/05/cinemagraph-sunset.gif') no-repeat center fixed;     
+    background-size: cover;
+    }
+    * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    }
+    .container{
+    display: flex;
+    justify-content: center;
+    align-items:center !important;
+    height: 100vh;
+    }
+    .form{
+    width: 350px;
+    height: 710px;
+    background-color: rgba(41, 39, 39, 0.3);
+    box-shadow: 0 5px 30px black;
+    }
+    .formGroup{
+    display: flex;
+    justify-content: center;
+    }
+    .formGroup input{
+    border: none;
+    width: 80%;
+    border-bottom: 2px solid white;
+    padding: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+    }
+    .formGroup1{
+    display: flex;
+    justify-content: left;
+    }
+    .formGroup1 input{
+    border: none;
+    width: 38%;
+    border-bottom: 2px solid white;
+    padding: 8px;
+    margin-left: 35px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+    }
+    .formGroup2{
+    display: flex;
+    justify-content: right;
+    }
+    .formGroup2 input{
+    border: none;
+    width: 38%;
+    border-bottom: 2px solid white;
+    padding: 8px;
+    margin-top: -43px;
+    margin-right: 38px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+    }
+    .fp1 input{
+    border: none;
+    width: 25%;
+    border-bottom: 2px solid white;
+    padding: 8px;
+    margin-left: 35px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+    }
+    .fp2{
+    display: flex;
+    justify-content: right;
+    }
+    .fp2 input{
+    border: none;
+    width: 25%;
+    border-bottom: 2px solid white;
+    padding: 8px;
+    margin-top: -43px;
+    margin-right: 38px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+    }
+    .fp3{
+    display: flex;
+    justify-content: center;
+    }
+    .fp3 input{
+    border: none;
+    width: 25%;
+    border-bottom: 2px solid white;
+    padding: 8px;
+    margin-top: -43px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+    }
+    input:focus {
+    outline: none !important;
+    border-bottom: 2px solid rgb(91, 243, 131);
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    }
+    ::placeholder {
+    color: white;
+    }
+    .text{
+    color: rgb(199, 197, 197);
+    font-size: 13px;
+    }
+    .btn2{
+    padding: 10px;
+    width: 150px;
+    border-radius: 20px;
+    background-color: rgb(10, 136, 43);
+    border-style: none;
+    color: white;
+    font-weight: 600;
+    }
+    .btn2:hover{
+    background-color: rgba(10, 136, 43, 0.5);
+    }
+    .btn button:hover{
+    border-bottom: 2px solid rgb(91, 243, 131);
+    }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="form"><br><br>
+      <div class=text>
+        <h1><center>Rainfall Prediction</center></h1>
+      </div>
+      <form action="{{url_for('predict')}}" method=post>
+        <div class="formGroup">
+          <input list="locate" name="Location" placeholder="Location" autocomplete="off">
+          <datalist id="locate">
+            <option value="Albury">
+            <option value="BadgerysCreek">
+            <option value="Cobar">
+            <option value="CoffsHarbour">
+            <option value="Moree">
+            <option value="Newcastle">
+            <option value="NorahHead">
+            <option value="NorfolkIsland">
+            <option value="Penrith">
+            <option value="Richmond">
+            <option value="Sydney">
+            <option value="SydneyAirport">
+            <option value="WaggaWagga">
+            <option value="Williamtown">
+            <option value="Wollongong">
+            <option value="Canberra">
+            <option value="Tuggeranong">
+            <option value="MountGinini">
+            <option value="Ballarat">
+            <option value="Bendigo">
+            <option value="Sale">
+            <option value="MelbourneAirport">
+            <option value="Melbourne">
+            <option value="Mildura">
+            <option value="Nhil">
+            <option value="Portland">
+            <option value="Watsonia">
+            <option value="Dartmoor">
+            <option value="Brisbane">
+            <option value="Cairns">
+            <option value="GoldCoast">
+            <option value="Townsville">
+            <option value="Adelaide">
+            <option value="MountGambier">
+            <option value="Nuriootpa">
+            <option value="Woomera">
+            <option value="Albany">
+            <option value="Witchcliffe">
+            <option value="PearceRAAF">
+            <option value="PerthAirport">
+            <option value="Perth">
+            <option value="SalmonGums">
+            <option value="Walpole">
+            <option value="Hobart">
+            <option value="Launceston">
+            <option value="AliceSprings">
+            <option value="Darwin">
+            <option value="Katherine">
+            <option value="Uluru">
+          </datalist>
+        </div>
+        <div class="formGroup">
+          <input type="number" step="any" placeholder="MinTemp" name="MinTemp" required autocomplete="off">
+        </div>
+        <div class="formGroup">
+          <input type="number" step="any" name="MaxTemp" placeholder="MaxTemp" required autocomplete="off">
+        </div>
+        <div class="formGroup">
+          <input type="number" step="any" name="Rainfall" placeholder="Rainfall" required autocomplete="off">
+        </div>
+        <div class="formGroup">
+          <input list="dir" name="WindGustDir" placeholder="WindGustDir" required autocomplete="off">
+          <datalist id="dir">
+            <option value="W">
+            <option value="WNW">
+            <option value="WSW">
+            <option value="NE">
+            <option value="NNW">
+            <option value="N">
+            <option value="NNE">
+            <option value="SW">
+            <option value="ENE">
+            <option value="SSE">
+            <option value="S">
+            <option value="NW">
+            <option value="SE">
+            <option value="ESE">
+            <option value="E">
+            <option value="SSW">
+          </datalist>
+        </div>
+        <div class="formGroup">
+          <input type="number" step="any" name="WindGustSpeed" placeholder="WindGustSpeed" required autocomplete="off">
+        </div>
+        <div class="formGroup1">
+          <input list="dir" name="WindDir9am" placeholder="WindDir9am" required autocomplete="off">
+          <datalist id="dir">
+            <option value="W">
+            <option value="WNW">
+            <option value="WSW">
+            <option value="NE">
+            <option value="NNW">
+            <option value="N">
+            <option value="NNE">
+            <option value="SW">
+            <option value="ENE">
+            <option value="SSE">
+            <option value="S">
+            <option value="NW">
+            <option value="SE">
+            <option value="ESE">
+            <option value="E">
+            <option value="SSW">
+          </datalist>
+        </div>
+        <div class="formGroup2">
+          <input list="dir" name="WindDir3pm" placeholder="WindDir3pm" required autocomplete="off">
+          <datalist id="dir">
+            <option value="W">
+            <option value="WNW">
+            <option value="WSW">
+            <option value="NE">
+            <option value="NNW">
+            <option value="N">
+            <option value="NNE">
+            <option value="SW">
+            <option value="ENE">
+            <option value="SSE">
+            <option value="S">
+            <option value="NW">
+            <option value="SE">
+            <option value="ESE">
+            <option value="E">
+            <option value="SSW">
+          </datalist>
+        </div>
+        <div class="formGroup1">
+          <input type="number" step="any" name="WindSpeed9am" placeholder="WindSpeed9am" required autocomplete="off">
+        </div>
+        <div class="formGroup2">
+          <input type="number" step="any" name="WindSpeed3pm" placeholder="WindSpeed3pm" required autocomplete="off">
+        </div>
+        <div class="formGroup1">
+          <input type="number" step="any" name="Humidity9am" placeholder="Humidity9am" required autocomplete="off">
+        </div>
+        <div class="formGroup2">
+          <input type="number" step="any" name="Humidity3pm" placeholder="Humidity3pm" required autocomplete="off">
+        </div>
+        <div class="formGroup1">
+          <input type="number" step="any" name="Pressure9am" placeholder="Pressure9am" required autocomplete="off">
+        </div>
+        <div class="formGroup2">
+          <input type="number" step="any" name="Pressure3pm" placeholder="Pressure3pm" required autocomplete="off">
+        </div>
+        <div class="formGroup1">
+          <input type="number" step="any" name="Cloud9am" placeholder="Cloud9am" required autocomplete="off">
+        </div>
+        <div class="formGroup2">
+          <input type="number" step="any" name="Cloud3pm" placeholder="Cloud3pm" required autocomplete="off">
+        </div>
+        <div class="formGroup1">
+          <input type="number" step="any" name="Temp9am" placeholder="Temp9am" required autocomplete="off">
+        </div>
+        <div class="formGroup2">
+          <input type="number" step="any" name="Temp3pm" placeholder="Temp3pm" required autocomplete="off">
+        </div>
+        <div class="fp1">
+          <input type="number" step="any" name="year" placeholder="year" required autocomplete="off">
+        </div>
+        <div class="fp3">
+          <input type="number" step="any" name="month" placeholder="month" required autocomplete="off">
+        </div>
+        <div class="fp2">
+          <input type="number" step="any" name="date" placeholder="date" required autocomplete="off">
+        </div>
+        <div class="formGroup">
+          <input list="tell" name="RainToday" placeholder="RainToday" required autocomplete="off">
+          <datalist id="tell">
+            <option value="YES">
+            <option value="NO">
+          </datalist>
+        </div>
+        <div class="formGroup">
+          <button type="submit" class="btn2">PREDICT</button>
+        </div>
+      </form>  
+    </div>
+  </div>
+</body>
+
+</html>
